@@ -16,3 +16,6 @@ tfi   Runs terraform init
 tfp   Runs terraform plan
 tfv   Runs terraform validate
 ```
+
+
+Note to future Scott: on git 2.54.0+ we can do global hk install.
