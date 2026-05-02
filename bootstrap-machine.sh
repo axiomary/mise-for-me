@@ -13,4 +13,13 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -sf "$REPO_DIR/config.toml" ~/.config/mise/config.toml
 mise install
 
-echo "Mise global config linked and tools installed!"
+HK_ALIAS="alias hk='mise exec -- hk'"
+if ! grep -q "$HK_ALIAS" ~/.zshrc; then
+    echo "$HK_ALIAS" >> ~/.zshrc
+    echo "Alias 'hk' added to ~/.zshrc"
+else
+    echo "Alias 'hk' already exists in ~/.zshrc"
+fi
+
+
+echo "Mise global config linked and tools installed! Restart your terminal or run 'source ~/.zshrc'"
