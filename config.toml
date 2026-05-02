@@ -1,0 +1,32 @@
+[tools]
+aws-cli = { version = "latest", symlink_bins = "true" }
+terraform = "latest"
+tflint = "latest"
+tfsec = "latest"
+
+[tasks."tfi"]
+description = "Initializes a Terraform working directory"
+run = "terraform init"
+
+[tasks."tfp"]
+description = "Generates an execution plan for Terraform"
+run = "terraform plan"
+
+[tasks."tfa"]
+description = "Applies the changes required to reach the desired state of the configuration"
+run = "terraform apply"
+
+[tasks."tfv"]
+description = "Validates the Terraform files"
+run = "terraform validate"
+
+[tasks."tff"]
+description = "Formats the Terraform files"
+run = "terraform fmt"
+
+[tasks."tfch"]
+description = "Checks the Terraform files"
+depends = ["terraform:format", "terraform:validate"]
+
+
+
