@@ -1,5 +1,7 @@
 [tools]
 aws-cli = { version = "latest", symlink_bins = "true" }
+hk = "latest"
+pkl = "latest"
 terraform = "latest"
 tflint = "latest"
 tfsec = "latest"
@@ -24,9 +26,12 @@ run = "terraform validate"
 description = "runs terraform fmt"
 run = "terraform fmt"
 
-[tasks."tfch"]
-description = "format AND validate all in one!"
-depends = ["tff", "tfv"]
+[tasks. "tfl"]
+description = "runs tflint"
+run = "tflint"
 
+[tasks."tfch"]
+description = "lint AND format AND validate all in one!"
+depends = ["tfl","tff", "tfv"]
 
 
