@@ -34,4 +34,9 @@ run = "tflint"
 description = "lint AND format AND validate all in one!"
 depends = ["tfl","tff", "tfv"]
 
+[tasks.pre-commit]
+run = "hk run pre-commit"
 
+[tasks.hk-install]
+description = "Bootstraps a repo with hk pre-commit"
+run = "hk install --mise"

@@ -13,12 +13,12 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -sf "$REPO_DIR/config.toml" ~/.config/mise/config.toml
 mise install
 
-HK_ALIAS="alias hk='mise exec -- hk'"
-if ! grep -q "$HK_ALIAS" ~/.zshrc; then
-    echo "$HK_ALIAS" >> ~/.zshrc
-    echo "Alias 'hk' added to ~/.zshrc"
+HK_CMD="export HK_MISE=1"
+if ! grep -q "$HK_CMD" ~/.zshrc; then
+    echo "$HK_CMD" >> ~/.zshrc
+    echo "HK_MISE set in /.zshrc"
 else
-    echo "Alias 'hk' already exists in ~/.zshrc"
+    echo "HK_MISE already exists in ~/.zshrc"
 fi
 
 
