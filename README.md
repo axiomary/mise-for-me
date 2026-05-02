@@ -8,12 +8,11 @@ The idea is to clone this repo, run the bootstrap script `./bootstrap-machine.sh
 
 Run `mise run` to see the available commands! 
 
-Tasks
-Select a task to run
-❯ tfa   Runs terraform apply
-  tfch  format AND validate all in one!
-  tff   runs terraform fmt
-  tfi   Runs terraform init
-  tfp   Runs terraform plan
-  tfv   Runs terraform validate
-
+```Tasks
+tfa   Runs terraform apply
+tfch  format AND validate all in one!
+tff   runs terraform fmt
+tfi   Runs terraform init
+tfp   Runs terraform plan
+tfv   Runs terraform validate
+```
