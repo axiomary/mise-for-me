@@ -5,28 +5,28 @@ tflint = "latest"
 tfsec = "latest"
 
 [tasks."tfi"]
-description = "Initializes a Terraform working directory"
+description = "Runs terraform init"
 run = "terraform init"
 
 [tasks."tfp"]
-description = "Generates an execution plan for Terraform"
+description = "Runs terraform plan"
 run = "terraform plan"
 
 [tasks."tfa"]
-description = "Applies the changes required to reach the desired state of the configuration"
+description = "Runs terraform apply"
 run = "terraform apply"
 
 [tasks."tfv"]
-description = "Validates the Terraform files"
+description = "Runs terraform validate"
 run = "terraform validate"
 
 [tasks."tff"]
-description = "Formats the Terraform files"
+description = "runs terraform fmt"
 run = "terraform fmt"
 
 [tasks."tfch"]
-description = "Checks the Terraform files"
-depends = ["terraform:format", "terraform:validate"]
+description = "format AND validate all in one!"
+depends = ["tff", "tfv"]
 
 
 
