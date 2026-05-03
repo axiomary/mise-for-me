@@ -17,13 +17,4 @@ tfp   Runs terraform plan
 tfv   Runs terraform validate
 ```
 
-
 Note to future Scott: on git 2.54.0+ we can do global hk install.
-
-# FUTURE TECH 
-I want to be able to merge many tool specific sub-tomls into config.toml 
-so like
---> terraform.toml
---> docker.toml
---> foo.toml
-------> config.toml
