@@ -14,7 +14,7 @@ RUN apk add --no-cache \
 
 COPY --from=builder /usr/local/bin/mise /usr/local/bin/mise
 
-# See config/mise.conf.d/README.md to understand why 1* is used! 
+# See config/mise.conf.d/README.md to understand why 1* is used! A HUMAN WROTE THIS COMMENT :D 
 COPY config/mise/conf.d/1*.toml /root/.config/mise/conf.d/
 #Force mise to detect musl libc correctl
 ENV MISE_LIBC=musl
