@@ -1,0 +1,11 @@
+[tools]
+aws-cli = { version = "latest", symlink_bins = "true" }
+hk = "1.36.0"
+pkl = "0.31.1"
+
+[tasks.pre-commit]
+run = "hk run pre-commit"
+
+[tasks.hk-install]
+description = "Bootstraps a repo with hk pre-commit"
+run = "hk install --mise"

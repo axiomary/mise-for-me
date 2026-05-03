@@ -1,10 +1,6 @@
 [tools]
-aws-cli = { version = "latest", symlink_bins = "true" }
-hk = "latest"
-pkl = "latest"
-terraform = "latest"
-tflint = "latest"
-tfsec = "latest"
+terraform = "1.15.1"
+tflint = "0.62.0"
 
 [tasks."tfi"]
 description = "Runs terraform init"
@@ -33,10 +29,3 @@ run = "tflint"
 [tasks."tfch"]
 description = "lint AND format AND validate all in one!"
 depends = ["tfl","tff", "tfv"]
-
-[tasks.pre-commit]
-run = "hk run pre-commit"
-
-[tasks.hk-install]
-description = "Bootstraps a repo with hk pre-commit"
-run = "hk install --mise"

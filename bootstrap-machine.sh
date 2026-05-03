@@ -1,5 +1,7 @@
 #!/bin/bash
 
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SOURCE_CONFIG_DIR="$REPO_DIR/config/mise/conf.d"
 
 if ! command -v mise &> /dev/null; then
     echo "Error: 'mise' is not installed."
@@ -8,9 +10,10 @@ if ! command -v mise &> /dev/null; then
     exit 1
 fi
 
-mkdir -p ~/.config/mise
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ln -sf "$REPO_DIR/config.toml" ~/.config/mise/config.toml
+mkdir -p ~/.config
+ln -sfn "$SOURCE_CONFIG_DIR" ~/.config/mise/conf.d
+
+echo "Linked $SOURCE_CONFIG_DIR to ~/.config/mise"
 mise install
 
 HK_CMD="export HK_MISE=1"
