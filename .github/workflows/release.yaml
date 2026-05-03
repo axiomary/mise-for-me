@@ -1,7 +1,7 @@
 name: Publish to ECR
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   push:
