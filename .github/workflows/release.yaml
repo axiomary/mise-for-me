@@ -1,0 +1,32 @@
+name: Publish to ECR
+on:
+  release:
+    types: [created]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Required for OIDC authentication
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
+        with:
+          role-to-assume: arn:aws:iam::755716229754:role/gha-organization-infrastructure-role-20260503004140526700000002 # why tf is it named like this, Scott? 
+          aws-region: us-west-2
+      
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@19d944daaa35f0fa1d3f7f8af1d3f2e5de25c5b7 # v2.1.4
+      
+      - name: Build and Push mise-for-me-ci-cd to ECR
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: mise-for-me-ci-cd
+          IMAGE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f ${REPOSITORY}.Dockerfile .
+          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          

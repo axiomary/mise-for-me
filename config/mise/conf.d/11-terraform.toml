@@ -2,6 +2,10 @@
 terraform = "1.15.1"
 tflint = "0.62.0"
 
+[tasks.tfver]
+description = "Runs terraform version"
+run = "terraform version"
+
 [tasks."tfi"]
 description = "Runs terraform init"
 run = "terraform init"
