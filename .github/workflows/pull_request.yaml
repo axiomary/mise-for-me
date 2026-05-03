@@ -6,11 +6,11 @@ on:
 
 jobs:
   build-mise-for-ci-cd:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-    - name: build image
-      run:  docker build -t mise-for-me-ci-cd -f mise-for-me-ci-cd.Dockerfile .
-    - name: test image
-      run: docker run --rm mise-for-me-ci-cd mise tfver
-  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: build image
+        run:  docker build -t mise-for-me-ci-cd -f mise-for-me-ci-cd.Dockerfile .
+      - name: test image
+        run: docker run --rm mise-for-me-ci-cd mise tfver
+    
