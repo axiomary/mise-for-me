@@ -39,5 +39,4 @@ jobs:
           tag_name: v${{ steps.semver.outputs.version }}
           name: Release v${{ steps.semver.outputs.version }}
           generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ steps.create-release-token.outputs.token }}
+          token: ${{ steps.create-release-token.outputs.token }}
