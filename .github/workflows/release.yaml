@@ -14,7 +14,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
         with:
-          role-to-assume: arn:aws:iam::755716229754:role/gha-organization-infrastructure-role-20260503004140526700000002 # why tf is it named like this, Scott? 
+          role-to-assume: arn:aws:iam::755716229754:role/gha-organization-infra-read-20260508001755299600000004 # why tf is it named like this, Scott? 
           aws-region: us-west-2
       
       - name: Login to Amazon ECR
