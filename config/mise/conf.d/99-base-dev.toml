@@ -2,6 +2,7 @@
 aws-cli = { version = "latest", symlink_bins = "true" }
 hk = "1.36.0"
 pkl = "0.31.1"
+jq = "1.8.1"
 
 [tasks.pre-commit]
 run = "hk run pre-commit"
