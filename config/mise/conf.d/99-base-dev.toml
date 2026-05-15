@@ -1,9 +1,10 @@
 [tools]
 aws-cli = { version = "2.34", symlink_bins = "true" }
-jq = "1.8.1"
-hk = "1.36.0"
-pkl = "0.31.1"
-pnpm = "11.1"
+jq = "1.8" 
+uv = "0.11" # python package manager
+
+hk = "1.36" # mise sister package for pre-commit
+pkl = "0.31" # needed for hk
 
 [tasks.pre-commit]
 run = "hk run pre-commit"
