@@ -1,0 +1,7 @@
+[tools]
+"aqua:theseus-rs/postgresql-binaries" = "17.6"
+"supabase" = "2.98.0"
+
+[tasks.psql]
+description = "Runs psql"
+run = "psql"
