@@ -1,8 +1,9 @@
 [tools]
-aws-cli = { version = "2.34.42", symlink_bins = "true" }
+aws-cli = { version = "2.34", symlink_bins = "true" }
 jq = "1.8.1"
 hk = "1.36.0"
 pkl = "0.31.1"
+pnpm = "11.1"
 
 [tasks.pre-commit]
 run = "hk run pre-commit"
