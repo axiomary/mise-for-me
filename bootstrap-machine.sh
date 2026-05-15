@@ -24,5 +24,13 @@ else
     echo "HK_MISE already exists in ~/.zshrc"
 fi
 
+SHIMS_CMD='export PATH="$HOME/.local/share/mise/shims:$PATH"'
+if ! grep -qF "$SHIMS_CMD" ~/.zshrc; then
+    echo "$SHIMS_CMD" >> ~/.zshrc
+    echo "Mise shims added to PATH in ~/.zshrc"
+else
+    echo "Mise shims already exist in ~/.zshrc"
+fi
+
 
 echo "Mise global config linked and tools installed! Restart your terminal or run 'source ~/.zshrc'"
