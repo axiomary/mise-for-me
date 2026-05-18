@@ -1,6 +1,6 @@
 [tools]
-terraform = "1.15.1"
-tflint = "0.62.0"
+terraform = "1.15"
+tflint = "0.62"
 
 [tasks.tfver]
 description = "Runs terraform version"
