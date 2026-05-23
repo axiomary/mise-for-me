@@ -10,7 +10,7 @@ if ! command -v mise &> /dev/null; then
     exit 1
 fi
 
-mkdir -p ~/.config
+mkdir -p ~/.config/mise
 ln -sfn "$SOURCE_CONFIG_DIR" ~/.config/mise/conf.d
 
 echo "Linked $SOURCE_CONFIG_DIR to ~/.config/mise"
