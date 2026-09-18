@@ -1,6 +1,6 @@
 [tools]
-terraform = "1.15"
-tflint = "0.62"
+terraform = "1.16"
+tflint = "0.64"
 
 [tasks.tfver]
 description = "Runs terraform version"
@@ -8,26 +8,32 @@ run = "terraform version"
 
 [tasks."tfi"]
 description = "Runs terraform init"
+dir = "{{cwd}}"
 run = "terraform init"
 
 [tasks."tfp"]
 description = "Runs terraform plan"
+dir = "{{cwd}}"
 run = "terraform plan"
 
 [tasks."tfa"]
 description = "Runs terraform apply"
+dir = "{{cwd}}"
 run = "terraform apply"
 
 [tasks."tfv"]
 description = "Runs terraform validate"
+dir = "{{cwd}}"
 run = "terraform validate"
 
 [tasks."tff"]
 description = "runs terraform fmt"
-run = "terraform fmt"
+dir = "{{cwd}}"
+run = "pwd && terraform fmt"
 
 [tasks. "tfl"]
 description = "runs tflint"
+dir = "{{cwd}}"
 run = "tflint"
 
 [tasks."tfch"]
